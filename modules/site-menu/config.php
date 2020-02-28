@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'site-menu',
-    '__version' => '0.1.0',
+    '__version' => '0.2.0',
     '__git' => 'git@github.com:getmim/site-menu.git',
     '__license' => 'MIT',
     '__author' => [
@@ -64,6 +64,13 @@ return [
                 'created' => [
                     'type' => 'date'
                 ]
+            ]
+        ]
+    ],
+    'libEvent' => [
+        'events' => [
+            'site-menu:updated' => [
+                'SiteMenu\\Library\\Event::clear' => true
             ]
         ]
     ]
