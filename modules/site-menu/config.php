@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'site-menu',
-    '__version' => '0.0.1',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getmim/site-menu.git',
     '__license' => 'MIT',
     '__author' => [
@@ -17,6 +17,9 @@ return [
         'required' => [
             [
                 'lib-model' => NULL
+            ],
+            [
+                'lib-cache' => NULL
             ]
         ],
         'optional' => []
@@ -26,6 +29,10 @@ return [
             'SiteMenu\\Model' => [
                 'type' => 'file',
                 'base' => 'modules/site-menu/model'
+            ],
+            'SiteMenu\\Library' => [
+                'type' => 'file',
+                'base' => 'modules/site-menu/library'
             ]
         ],
         'files' => []
@@ -39,9 +46,9 @@ return [
                 'user' => [
                     'type' => 'object',
                     'model' => [
-                        'name'  => 'LibUser\\Library\\Fetcher',
+                        'name' => 'LibUser\\Library\\Fetcher',
                         'field' => 'id',
-                        'type'  => 'number'
+                        'type' => 'number'
                     ],
                     'format' => 'user'
                 ],
