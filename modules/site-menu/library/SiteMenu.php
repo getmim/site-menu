@@ -24,7 +24,7 @@ class SiteMenu
         
         $menus = \Mim::$app->cache->get('site-menu') ?? [];
         if(!$menus){
-            $db_menus = SMenu::get([]);
+            $db_menus = SMenu::get([]) ?? [];
             foreach($db_menus as $menu){
                 $menu->content = json_decode($menu->content);
                 $menus[$menu->name] = $menu;
